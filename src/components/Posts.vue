@@ -4,7 +4,9 @@
     <div class="card-body">
       <h5 class="card-title">
         <span>{{ post.creatorName }}</span>
-        <img :src="post.creatorPic" alt="">
+        <router-link :to="{ name: 'Profile' }">
+          <img :src="post.creatorPic" alt="">
+        </router-link>
       </h5>
       <p class="card-text">
         {{ post.body }}
