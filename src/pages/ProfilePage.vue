@@ -1,13 +1,15 @@
 <template>
-  <h1>this is the profile page </h1>
+  <Posts v-for="p in posts " :key="p.id" :post="p" />
 </template>
 
 <script>
-import { computed } from '@vue/runtime-core'
+import { computed, watchEffect } from '@vue/runtime-core'
 import { useRoute } from 'vue-router'
 import { postsService } from '../services/PostsService'
 import Pop from '../utils/Pop'
 import { AppState } from '../AppState'
+import { profileService } from '../services/ProfileService'
+
 export default {
   setup() {
     const route = useRoute()
@@ -18,8 +20,15 @@ export default {
         Pop.toast(error, 'error')
       }
     }
+    watchEffect(async() => {
+      if (route.params.id) {
+        await profileService.getProfileById(route.params.id)
+        getPosts()
+      }
+    })
     return {
-      profile: computed(() => AppState)
+      profile: computed(() => AppState.profile),
+      posts: computed(() => AppState.posts)
     }
   }
 }

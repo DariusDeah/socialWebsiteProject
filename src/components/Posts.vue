@@ -4,7 +4,8 @@
     <div class="card-body">
       <h5 class="card-title">
         <span>{{ post.creatorName }}</span>
-        <router-link :to="{ name: 'Profile' }">
+        <!-- if  -->
+        <router-link :to="{ name: 'Profile',params:{id:post.creatorId} }">
           <img :src="post.creatorPic" alt="">
         </router-link>
       </h5>
