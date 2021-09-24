@@ -5,6 +5,14 @@
   <main>
     <router-view />
   </main>
+  <Modal id="post-modal">
+    <template #modal-title>
+      <h4>Post Form</h4>
+    </template>
+    <template #modal-body>
+      <PostForm />
+    </template>
+  </Modal>
 </template>
 
 <script>

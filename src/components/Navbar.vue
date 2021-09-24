@@ -22,6 +22,9 @@
           <router-link :to="{ name: 'About' }" class="btn text-success lighten-30 selectable text-uppercase">
             About
           </router-link>
+          <button data-bs-target="#post-modal" data-bs-toggle="modal" class="btn btn-primary text-light  selectable text-uppercase">
+            + New Posts
+          </button>
         </li>
       </ul>
       <span class="navbar-text">
