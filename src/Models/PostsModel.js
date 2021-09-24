@@ -2,7 +2,9 @@ export class PostsModel {
   constructor(postData) {
     this.body = postData.body
     this.createdAt = postData.createdAt
-    this.creator = postData.creator
+    this.creatorName = postData.creator.name
+    this.creatorPic = postData.creator.picture
+    this.graduated = postData.creator.graduated
     this.creatorId = postData.creatorId || {}
     this.id = postData.id
     this.imgUrl = postData.imgUrl
