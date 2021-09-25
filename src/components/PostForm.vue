@@ -43,6 +43,7 @@ export default {
           Pop.toast('workss', 'success')
 
           const modal = Modal.getInstance(document.getElementById('post-form'))
+          // FIXME not hiding this modal;throwing a not found for the hide funnction
           modal.hide()
         } catch (error) {
           Pop.toast(error, 'error')
