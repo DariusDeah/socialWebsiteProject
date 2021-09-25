@@ -23,5 +23,10 @@ class PostsService {
     const res = await api.delete(`api/posts/${postId}`)
     logger.log(res.data)
   }
+
+  async likePost(postId) {
+    const res = await api.post(`api/posts/${postId}/like`)
+    logger.log(res.data)
+  }
 }
 export const postsService = new PostsService()

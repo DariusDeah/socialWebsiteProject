@@ -18,7 +18,14 @@
       <p class="card-text">
         {{ post.body }}
       </p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+      <div class="row">
+        <div class="col d-flex justify-content-between">
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <div class="mdi mdi-heart mdi-48px d-flex selectable " @click="likePost()">
+            <h4>{{ post.likes.length }}</h4>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -50,6 +57,10 @@ export default {
         } catch (error) {
           Pop.toast(error, 'error')
         }
+      },
+      async likePost() {
+        await postsService.likePost(props.post.id)
+        Pop.toast('post liked', 'success')
       }
     }
   }
