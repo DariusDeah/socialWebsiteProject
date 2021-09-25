@@ -5,10 +5,15 @@
       <h5 class="card-title">
         <span>{{ post.creatorName }}</span>
         <!-- if  -->
-        <button :v-if="{params{id: !post.creatorId}}"></button>
-        <router-link :to="{ name: 'Profile',params:{id:post.creatorId} }">
-          <img :src="post.creatorPic" alt="">
-        </router-link>
+        <!-- <button v-if="account.id == posts.creatorId" class="btn btn-danger">
+          X
+        </button> -->
+
+        <button>
+          <router-link :to="{ name: 'Profile',params:{id:post.creatorId} }">
+            <img :src="post.creatorPic" alt="">
+          </router-link>
+        </button>
       </h5>
       <p class="card-text">
         {{ post.body }}
@@ -29,16 +34,16 @@ export default {
     post: { type: PostsModel, required: true }
   },
   setup() {
-    return {
-      posts: computed(() => AppState.posts),
-      async getPost(props) {
-        try {
-          await postsService.getPost()
-        } catch (error) {
-          Pop.toast(error, 'error')
-        }
-      }
-    }
+    // return {
+    //   posts: computed(() => AppState.posts),
+    //   async getPost(props) {
+    //     try {
+    //       await postsService.getPost()
+    //     } catch (error) {
+    //       Pop.toast(error, 'error')
+    //     }
+    //   }
+    // }
   }
 }
 </script>
