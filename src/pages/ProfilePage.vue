@@ -1,5 +1,27 @@
 <template>
-  <Posts v-for="p in posts " :key="p.id" :post="p" />
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <img :src="profile.coverImg" alt="">
+        <h4>graduted {{ profile.graduated }}</h4>
+        <h5>{{ profile.class }}</h5>
+        <p>{{ profile.bio }}</p>
+        <a :href="profile.github">
+          <button class="btn btn-info">
+            github
+          </button>
+        </a>
+        <a :href="profile.linkedin">
+          <button class="btn btn-primary">
+            linkedin
+          </button>
+        </a>
+
+        <p></p>
+      </div>
+    </div>
+    <Posts v-for="p in posts " :key="p.id" :post="p" />
+  </div>
 </template>
 
 <script>

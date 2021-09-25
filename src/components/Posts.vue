@@ -20,7 +20,7 @@
       </p>
       <div class="row">
         <div class="col d-flex justify-content-between">
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          {{ new Date( post.createdAt).toDateString() }}
           <div>
             <!-- find a way for the heart to become read and stay read as long as the user likes  -->
             <div class="mdi mdi-heart mdi-48px d-flex selectable " @lclick="likePost()" @dblclick="dislikePost()"></div>
