@@ -21,7 +21,9 @@
       <div class="row">
         <div class="col d-flex justify-content-between">
           <a href="#" class="btn btn-primary">Go somewhere</a>
-          <div class="mdi mdi-heart mdi-48px d-flex selectable " @click="likePost()">
+          <div>
+            <!-- find a way for the heart to become read and stay read as long as the user likes  -->
+            <div class="mdi mdi-heart mdi-48px d-flex selectable " @lclick="likePost()" @dblclick="dislikePost()"></div>
             <h4>{{ post.likes.length }}</h4>
           </div>
         </div>
@@ -60,7 +62,12 @@ export default {
       },
       async likePost() {
         await postsService.likePost(props.post.id)
+
         Pop.toast('post liked', 'success')
+      },
+      async dislikePosts() {
+        await postsService.unlikePost(props.post.id)
+        Pop.toast('post unliked', 'success')
       }
     }
   }
