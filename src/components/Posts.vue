@@ -5,6 +5,7 @@
       <h5 class="card-title">
         <span>{{ post.creatorName }}</span>
         <!-- if  -->
+        <button :v-if="{params{id: !post.creatorId}}"></button>
         <router-link :to="{ name: 'Profile',params:{id:post.creatorId} }">
           <img :src="post.creatorPic" alt="">
         </router-link>
