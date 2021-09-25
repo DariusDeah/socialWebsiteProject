@@ -12,11 +12,10 @@
           <slot name="modal-body"></slot>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-            Close
+          <button type="button" class="btn btn-secondary btn-close" data-bs-dismiss="modal">
           </button>
           <button type="button" class="btn btn-primary">
-            Save changes
+            Post it
           </button>
         </div>
       </div>

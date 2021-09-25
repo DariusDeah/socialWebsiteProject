@@ -14,9 +14,13 @@ class PostsService {
   }
 
   async createPost(newPost) {
-    const res = await api.post('api/projects', newPost)
+    const res = await api.post('api/posts', newPost)
     AppState.posts.unshift(new PostsModel(res.data))
-    logger.log('created data', res.data)
+    logger.log('created data', res)
+  }
+
+  async removePost(postId) {
+    const res = await api.delete(api / posts)
   }
 }
 export const postsService = new PostsService()
