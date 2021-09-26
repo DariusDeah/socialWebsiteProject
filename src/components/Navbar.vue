@@ -19,9 +19,19 @@
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav me-auto">
         <li>
+          <router-link :to="{ name: 'Home' }" class="mdi mdi-hexagon-multiple  selectable fs-1">
+          </router-link>
+        </li>
+        <li>
+          <router-link :to="{ name: 'Search' }" class="mdi mdi-card-search fs-2 selectable">
+          </router-link>
+        </li>
+        <li>
           <router-link :to="{ name: 'About' }" class="btn text-success lighten-30 selectable text-uppercase">
             About
           </router-link>
+        </li>
+        <li>
           <button data-bs-target="#post-modal" data-bs-toggle="modal" class="btn btn-primary text-light  selectable text-uppercase">
             + New Posts
           </button>

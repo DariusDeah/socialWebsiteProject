@@ -18,11 +18,15 @@
 <script>
 import { computed } from 'vue'
 import { AppState } from './AppState'
+import { adsService } from '../src/services/AdsService'
 export default {
   name: 'App',
   setup() {
     return {
-      appState: computed(() => AppState)
+      appState: computed(() => AppState),
+      async getAdds() {
+        await adsService.getAdds()
+      }
     }
   }
 }

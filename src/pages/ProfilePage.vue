@@ -7,16 +7,11 @@
         <h4>graduted {{ profile.graduated }}</h4>
         <h5>{{ profile.class }}</h5>
         <p>{{ profile.bio }}</p>
-        <a :href="profile.github">
-          <button class="btn btn-info">
-            github
-          </button>
+        <a :href="profile.github" class="mdi mdi-github fs-2 color-dark">
+
         </a>
         <!-- FIXME links back to homepage instead of linked in  -->
-        <a :href="profile.linkedin">
-          <button class="btn btn-primary">
-            linkedin
-          </button>
+        <a :href="profile.linkedin" class="mdi mdi-linkedin fs-2">
         </a>
         <h1>{{ profile.name }}</h1>
         <!-- TODO should only show couunt for people that arent user -->
