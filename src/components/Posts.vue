@@ -24,7 +24,8 @@
           <div>
             <!-- find a way for the heart to become read and stay read as long as the user likes  -->
             <div class="mdi mdi-heart mdi-48px d-flex selectable " @lclick="likePost()" @dblclick="dislikePost()"></div>
-            <h4>liked by: {{ post.likes[0].name }} </h4> <h4>{{ post.likes.length }}</h4>
+            <!-- FIXME show first index of the person that like the post  -->
+            <h4>liked by:  post.likes[0].name  </h4> <h4>{{ post.likes.length }}</h4>
           </div>
         </div>
       </div>
