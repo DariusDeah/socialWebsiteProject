@@ -13,6 +13,7 @@ import { computed, onMounted } from '@vue/runtime-core'
 import { postsService } from '../services/PostsService'
 import Pop from '../utils/Pop'
 import { AppState } from '../AppState'
+import { adsService } from '../services/AdsService'
 export default {
   setup() {
     onMounted(async() => {

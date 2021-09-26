@@ -13,23 +13,31 @@
       <PostForm />
     </template>
   </Modal>
+  <Ads v-for="a in ads " :key="a.id" :ad="a" />
 </template>
 
 <script>
-import { computed } from 'vue'
+import { computed, onMounted } from 'vue'
 import { AppState } from './AppState'
 import { adsService } from '../src/services/AdsService'
+import Pop from './utils/Pop'
 export default {
   name: 'App',
+
   setup() {
-    return {
-      appState: computed(() => AppState),
-      async getAdds() {
-        await adsService.getAdds()
+    onMounted(async() => {
+      try {
+        await adsService.getAds()
+      } catch (error) {
+        Pop.toast(error, 'error')
       }
+    })
+    return {
+      ads: computed(() => AppState.ads)
     }
   }
 }
+
 </script>
 <style lang="scss">
 @import "./assets/scss/main.scss";

@@ -1,10 +1,13 @@
-const { logger } = require('../utils/Logger')
-const { api } = require('./AxiosService')
+import { AppState } from '../AppState'
+import { AdsModel } from '../Models/AdsModel'
+import { logger } from '../utils/Logger'
+import { api } from './AxiosService'
 
 class AdsService {
   async getAds() {
-    const res = api.get('api/ads')
+    const res = await api.get('api/ads')
     logger.log(res.data)
+    AppState.ads = res.data.map(a => new AdsModel(a))
   }
 }
-export const adsService = AdsService()
+export const adsService = new AdsService()
