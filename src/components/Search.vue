@@ -1,6 +1,8 @@
 <template>
   <form @submit.prevent="querySearch()">
-    <input v-model="query" type="text" required class="form-control bg-white" placeholder="search">
+    <div class="form-group">
+      <input v-model="query" type="text" required class="form-control bg-white" placeholder="search">
+    </div>
   </form>
 </template>
 
