@@ -1,10 +1,6 @@
 <template>
-  <div class="row">
-    <div class="col-4">
-      <h5>{{ ad.title }}</h5>
-      <img :src="ad.tall" alt="">
-    </div>
-  </div>
+  <h5>{{ ad.title }}</h5>
+  <img :src="ad.tall" alt="">
 </template>
 
 <script>

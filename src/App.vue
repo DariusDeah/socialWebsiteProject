@@ -13,10 +13,10 @@
       <PostForm />
     </template>
   </Modal>
-  <Ads v-for="a in ads " :key="a.id" :ad="a" />
 </template>
 
 <script>
+
 import { computed, onMounted } from 'vue'
 import { AppState } from './AppState'
 import { adsService } from '../src/services/AdsService'
@@ -33,7 +33,7 @@ export default {
       }
     })
     return {
-      ads: computed(() => AppState.ads)
+
     }
   }
 }
