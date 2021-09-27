@@ -6,9 +6,9 @@ import { api } from './AxiosService'
 import { convertToQuery } from '../utils/Query'
 
 class PostsService {
-  async getPost(query = {}) {
+  async getPost(query = {}, page) {
     AppState.posts = []
-    const res = await api.get('api/posts' + convertToQuery(query))
+    const res = await api.get('api/posts' + convertToQuery(query) + `?page=${page}`)
     logger.log(res.data)
     AppState.posts = res.data.posts.map(p => new PostsModel(p))
   }

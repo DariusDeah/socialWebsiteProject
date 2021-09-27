@@ -43,7 +43,7 @@ export default {
     return {
       posts: computed(() => AppState.posts),
       async getOldPosts() {
-        logger.log('connected')
+        postsService.getPost(page)
       },
       async getNewPosts() {
         logger.log('connected')
