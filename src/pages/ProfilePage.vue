@@ -15,7 +15,6 @@
         </a>
         <h1>{{ profile.name }}</h1>
         <!-- TODO should only show couunt for people that arent user -->
-        <h5>followers:{{ profile.subs.length }}</h5>
       </div>
     </div>
     <Posts v-for="p in posts " :key="p.id" :post="p" />

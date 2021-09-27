@@ -1,6 +1,6 @@
 // TODO customize nav bar
 <template>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3 fixed-top">
     <router-link class="navbar-brand d-flex" :to="{ name: 'Home' }">
       <div class="d-flex flex-column align-items-center">
       </div>
@@ -32,8 +32,8 @@
           </router-link>
         </li>
         <li>
-          <button data-bs-target="#post-modal" data-bs-toggle="modal" class="btn btn-primary text-light  selectable text-uppercase">
-            + New Posts
+          <button data-bs-target="#post-modal" data-bs-toggle="modal" class="btn btn-primary text-light rounded-circle fs-4 selectable text-uppercase">
+            +
           </button>
         </li>
       </ul>
@@ -127,4 +127,5 @@ a:hover {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
+
 </style>
